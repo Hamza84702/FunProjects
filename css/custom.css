@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.dark-mode .main {
+    background: linear-gradient(135deg, #1f1f1f, #383838);
+}
+
+.light-mode .main {
+    background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .theme-toggle button {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.light-mode .theme-toggle button {
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+}
+
+.overlay {
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.date {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ddd;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    width: 100px;
+    height: 80px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+input:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    font-size: 1.2rem;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* Dark Mode */
+.dark-mode .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .title, .dark-mode .date, .dark-mode label {
+    color: white;
+}
+
+.dark-mode input {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Light Mode */
+.light-mode .overlay {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.light-mode .title, .light-mode .date, .light-mode label {
+    color: #333;
+}
+
+.light-mode input {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
